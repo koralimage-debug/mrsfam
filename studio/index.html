@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#47233d">
+  <title>Mrs Fam Studio — record phone interviews with a radio voice</title>
+  <meta name="description" content="Mrs Fam Studio gives you a radio voice, sound pads and a music bed so you can record interviews on your phone and download them for Mrs Fam Radio.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Real Talk with Mrs Fam">
+  <meta property="og:url" content="https://mrsfam.com/studio">
+  <meta property="og:title" content="Mrs Fam Studio — record with a radio voice">
+  <meta property="og:description" content="Sound like you are in a radio studio while you record interviews on your phone. Download the mix and share it on Mrs Fam Radio.">
+  <meta property="og:image" content="https://mrsfam.com/slides/radio-solo-gold.png">
+  <meta property="og:image:alt" content="Mrs Fam broadcasting solo in the plum and gold radio studio">
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mrs Fam Studio — record with a radio voice">
+  <meta name="twitter:description" content="Sound like you are in a radio studio while you record interviews on your phone.">
+  <meta name="twitter:image" content="https://mrsfam.com/slides/radio-solo-gold.png">
+  <link rel="canonical" href="https://mrsfam.com/studio">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/studio/studio.css">
+</head>
+<body class="studio-page">
+  <header>
+    <a class="brand" href="/">real talk<span>WITH MRS FAM <i>✳</i></span></a>
+    <button class="button small menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>Menu</button>
+    <nav id="site-nav" aria-label="Main navigation">
+      <a href="/#episodes">The podcast</a>
+      <a href="/#topics">Our conversations</a>
+      <a href="/#radio">Radio</a>
+      <a href="/studio" aria-current="page">Studio</a>
+      <a href="/#live">Watch live</a>
+      <a href="/#about">About</a>
+    </nav>
+    <a class="button small" href="/#radio">Listen live ↗</a>
+  </header>
+
+  <main>
+    <section class="section studio-hero" id="top">
+      <div class="studio-hero-copy">
+        <div class="eyebrow">MRS FAM STUDIO</div>
+        <h1>Your voice.<br>A radio room.<br><em>On your phone.</em></h1>
+        <p>Open the microphone, choose a radio voice, and record interviews with station pads and a music bed. The mix stays on this device until you download it.</p>
+      </div>
+      <div class="on-air-board" aria-live="polite">
+        <div class="on-air" id="on-air">
+          <span class="on-air-lamp" aria-hidden="true"></span>
+          <span class="on-air-label" id="on-air-label">STANDBY</span>
+        </div>
+        <p class="on-air-note" id="on-air-note">The ON AIR light turns on when you are recording.</p>
+      </div>
+    </section>
+
+    <section class="section studio-console" aria-labelledby="console-heading">
+      <div class="console-head">
+        <div>
+          <div class="eyebrow">THE CONSOLE</div>
+          <h2 id="console-heading">Mrs Fam Studio</h2>
+        </div>
+        <p>Mobile first. Works in phone Safari and Chrome over a secure connection.</p>
+      </div>
+
+      <div class="console-card" id="studio-console">
+        <div class="meter-row">
+          <div class="meter-wrap">
+            <span class="meter-label">Level</span>
+            <div class="meter" id="meter" role="meter" aria-label="Output level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="meter-track" aria-hidden="true">
+                <div class="meter-fill" id="meter-fill"></div>
+                <div class="meter-peak" id="meter-peak"></div>
+              </div>
+            </div>
+            <span class="meter-readout" id="meter-readout">—</span>
+          </div>
+          <p class="status" id="studio-status" role="status" data-state="idle">Tap Open microphone to start the radio voice chain. Recordings stay on this device.</p>
+        </div>
+
+        <div class="console-actions">
+          <button class="button orange" id="mic-btn" type="button">Open microphone</button>
+          <button class="button" id="record-btn" type="button" disabled>Record</button>
+          <button class="button cream" id="stop-btn" type="button" disabled>Stop</button>
+          <span class="record-timer" id="record-timer" hidden>00:00</span>
+        </div>
+
+        <label class="consent-row">
+          <input type="checkbox" id="consent">
+          I have permission from everyone being recorded.
+        </label>
+
+        <div class="preset-block">
+          <p class="console-label" id="preset-heading">Voice preset</p>
+          <div class="preset-row" role="group" aria-labelledby="preset-heading">
+            <button type="button" class="preset-btn active" data-preset="radio" aria-pressed="true">Radio Voice</button>
+            <button type="button" class="preset-btn" data-preset="warm" aria-pressed="false">Warm</button>
+            <button type="button" class="preset-btn" data-preset="clear" aria-pressed="false">Clear Interview</button>
+          </div>
+          <p class="subtle" id="preset-note">Radio Voice: a high-pass at 80 Hz, warmth and presence EQ, compression, a limiter and a little reverb.</p>
+        </div>
+
+        <div class="monitor-block">
+          <label class="toggle-row">
+            <input type="checkbox" id="monitor-toggle">
+            Headphone monitoring
+          </label>
+          <p class="warning" id="monitor-warning" hidden>Use wired earbuds or headphones only. Monitoring through the phone speaker can cause a loud feedback squeal. Monitoring is off unless you turn it on.</p>
+        </div>
+      </div>
+
+      <div class="pads-card">
+        <div class="eyebrow">SOUND PADS</div>
+        <h3>Jingles, stings and a music bed</h3>
+        <p>Original, short cues made in this page. They are mixed into your recording.</p>
+        <div class="pad-grid" role="group" aria-label="Sound pads">
+          <button type="button" class="pad-btn" data-pad="id" disabled>Station ID</button>
+          <button type="button" class="pad-btn" data-pad="intro" disabled>Intro</button>
+          <button type="button" class="pad-btn" data-pad="sting" disabled>On air sting</button>
+          <button type="button" class="pad-btn" data-pad="applause" disabled>Applause</button>
+          <button type="button" class="pad-btn" data-pad="outro" disabled>Outro</button>
+        </div>
+        <div class="bed-controls">
+          <button type="button" class="button small" id="bed-btn" disabled>Start music bed</button>
+          <label class="bed-volume">Bed volume
+            <input type="range" id="bed-volume" min="0" max="100" value="28" disabled aria-label="Music bed volume">
+          </label>
+          <label class="toggle-row">
+            <input type="checkbox" id="duck-toggle" checked disabled>
+            Auto-duck the bed when you speak
+          </label>
+        </div>
+      </div>
+
+      <div class="takes-card" id="takes">
+        <div class="eyebrow">YOUR TAKES</div>
+        <h3>Download the processed mix</h3>
+        <p>The file includes your radio voice, pads and music bed. Download it before you leave this page, then upload it to your radio or podcast library.</p>
+        <div id="take-list" class="take-list"></div>
+        <p class="subtle" id="take-empty">No recordings yet.</p>
+      </div>
+    </section>
+
+    <section class="section studio-guide" id="guide" aria-labelledby="guide-heading">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">HOW TO DO A PHONE INTERVIEW</div>
+          <h2 id="guide-heading">A quiet room.<br>A clear plan.</h2>
+        </div>
+        <p>This Studio records the microphone on this device. It does not join a phone call by itself.</p>
+      </div>
+      <ol class="guide-list">
+        <li>
+          <h3>Wear wired earbuds or headphones</h3>
+          <p>Wired earbuds keep your voice out of the speakers and help you hear yourself if you turn monitoring on. A quiet room with soft furnishings and notifications off will sound cleaner.</p>
+        </li>
+        <li>
+          <h3>Place the guest on a second device</h3>
+          <p>Ask your guest to join by a regular phone call on a second phone, or put that call on speaker a short distance away. This phone then hears both of you through its microphone. Avoid putting the same phone on speaker while this page is open — that can cause echo or a feedback squeal.</p>
+        </li>
+        <li>
+          <h3>Open the microphone and do a short test</h3>
+          <p>Allow microphone access when the browser asks. Speak in your normal on-air voice and watch the level meter move. Try Radio Voice first, then Warm or Clear Interview if you want a different sound.</p>
+        </li>
+        <li>
+          <h3>Record, then download</h3>
+          <p>Confirm you have permission to record everyone, start the music bed if you want it, tap Record, and use the pads for a station ID, intro, applause or outro. The ON AIR light stays on until you tap Stop. Download the file straight away.</p>
+        </li>
+        <li>
+          <h3>Going live on Mrs Fam Radio later</h3>
+          <p>Mrs Fam Radio is already on air 24/7 with its regular programming. Broadcasting a live show from a phone or computer needs a RadioKing Start plan or higher, plus an encoder app. That upgrade has not been purchased yet, so use this Studio to record interviews you can upload afterwards. We are not listing plan prices here.</p>
+        </li>
+      </ol>
+      <p class="guide-foot">Prefer the simpler recorder, trimmer and meeting-link tools? They are still on the <a href="/#studio">homepage creator space</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="/">real talk<span>WITH MRS FAM ✳</span></a>
+    <p>REAL STORIES. REAL EXPERIENCES. REAL TALK.</p>
+    <span>© <span id="year"></span> Real Talk with Mrs Fam</span>
+    <p>Koral image LLC United States</p>
+    <p class="subtle">Mrs Fam Radio is on air 24/7. Record in Mrs Fam Studio, then download your mix before you leave the page.</p>
+  </footer>
+  <script src="/navigation.js"></script>
+  <script src="/studio/studio.js"></script>
+</body>
+</html>

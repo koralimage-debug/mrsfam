@@ -9,10 +9,12 @@
   });
 
   nav.addEventListener('click', event => {
-    const link = event.target.closest('a[href^="#"]');
+    const link = event.target.closest('a');
     if (!narrow.matches || !link) return;
-    const destination = document.getElementById(link.hash.slice(1));
-    if (destination && !destination.hasAttribute('tabindex')) destination.tabIndex = -1;
+    if (link.hash && link.pathname === location.pathname) {
+      const destination = document.getElementById(link.hash.slice(1));
+      if (destination && !destination.hasAttribute('tabindex')) destination.tabIndex = -1;
+    }
     setExpanded(false);
   });
 

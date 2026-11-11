@@ -45,3 +45,5 @@
 @media(max-width:800px){
   .radio-share-btn{flex:1 1 calc(50% - 8px);min-height:40px}
 }
+
+.studio-page-cta{margin:0 0 12px}
