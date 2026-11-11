@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light;
+  --plum: #230122;
+  --cream: #faf4e8;
+  --ink: #321c30;
+  --gold: #c7a04e;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  padding: clamp(12px, 4vw, 40px);
+  background: #eee3d3;
+  color: var(--ink);
+  font: 1rem/1.45 system-ui, sans-serif;
+}
+.card {
+  max-width: 520px;
+  margin: auto;
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--cream);
+  box-shadow: 0 16px 44px #2e142320;
+}
+.card-top {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(310px, 88vw, 485px);
+  background: var(--plum);
+}
+.logo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: clamp(90px, 23%, 118px);
+  height: auto;
+  margin: 12px 0 0 15px;
+}
+.portrait {
+  position: absolute;
+  display: block;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62%;
+  height: auto;
+}
+.curve { position: absolute; inset: auto 0 -1px; display: block; width: 100%; height: clamp(44px, 13vw, 76px); }
+.card-body { padding: 0 clamp(16px, 6vw, 38px) 24px; text-align: center; }
+h1, .brand-name { font-family: Georgia, serif; font-weight: 400; }
+h1 { margin: 0; font-size: clamp(2.4rem, 10vw, 3.5rem); line-height: 1.05; }
+.brand-name { margin: 6px 0 0; font-size: clamp(1.1rem, 5vw, 1.4rem); }
+.format { margin: 12px 0 20px; color: #77571e; font-size: .75rem; font-weight: 700; letter-spacing: .14em; }
+.contact-details { display: grid; justify-items: center; gap: 5px; font-style: normal; }
+.contact-details a { color: inherit; text-underline-offset: .2em; }
+.actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-top: 22px; }
+.actions a, .actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 9px 6px;
+  border: 1px solid #9c7838;
+  border-radius: 7px;
+  background: var(--plum);
+  color: var(--cream);
+  font: 600 .875rem/1.25 system-ui, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+.actions .secondary { background: transparent; color: var(--plum); }
+.actions a:hover, .actions button:hover { box-shadow: inset 0 0 0 2px var(--gold); }
+:focus-visible { outline: 2px solid #805a17; outline-offset: 3px; }
+.share-fallback { margin-top: 12px; text-align: left; }
+.share-fallback input { display: block; width: 100%; padding: 8px; border: 1px solid #9c7838; font: inherit; }
+.share-status { font-size: .8rem; }
+.share-status:empty { margin: 0; }
+.tagline { margin: 22px 0 0; padding-top: 15px; border-top: 1px solid var(--gold); font-size: .66rem; font-weight: 700; letter-spacing: .08em; }
